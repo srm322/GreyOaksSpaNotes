@@ -3,10 +3,10 @@ import mysql.connector
 # Function to establish database connection
 def connect_to_database():
     return mysql.connector.connect(
-        user='your_username',
-        password='your_password',
+        user='root',
+        password='GreyOaks2400',
         host='localhost',
-        database='your_database'
+        database='greyOaksNotes'
     )
 
 # Function to create tables
@@ -54,26 +54,27 @@ def insert_sample_data(connection):
 def purge_tables(connection):
     cursor = connection.cursor()
     
-    # Drop members table
-    cursor.execute("DROP TABLE IF EXISTS members")
-    
     # Drop appointments table
     cursor.execute("DROP TABLE IF EXISTS appointments")
+    
+    # Drop members table
+    cursor.execute("DROP TABLE IF EXISTS members")
     
     connection.commit()
     cursor.close()
 
 # Establish database connection
 connection = connect_to_database()
+print(connection)
 
 # Create tables
-create_tables(connection)
+#create_tables(connection)
 
 # Insert sample data (optional)
-insert_sample_data(connection)
+# insert_sample_data(connection)
 
 # Purge tables (uncomment to use)
-# purge_tables(connection)
+purge_tables(connection)
 
 # Close connection
 connection.close()
