@@ -14,15 +14,17 @@ class PasswordApp(tk.Tk):
         # Label and Entry for password
         self.label = tk.Label(frame, text="Enter Password:")
         self.label.pack(side=tk.LEFT)
+
         self.password_entry = tk.Entry(frame, show="*")
         self.password_entry.pack(side=tk.LEFT, padx=10)
+        # Set focus to the password entry
+        self.password_entry.focus_set()
 
         # Button to check the password
         self.submit_button = tk.Button(frame, text="Submit", command=self.check_password)
         self.submit_button.pack(side=tk.LEFT)
 
     def check_password(self):
-        # Correct password
         correct_password = "open"
 
         if self.password_entry.get() == correct_password:
@@ -31,6 +33,9 @@ class PasswordApp(tk.Tk):
         else:
             # Show error message
             messagebox.showerror("Error", "Wrong password!")
+            # Clear the password field and set focus back
+            self.password_entry.delete(0, tk.END)
+            self.password_entry.focus_set()
 
     def open_welcome_screen(self):
         # Destroy the password screen and open the welcome screen

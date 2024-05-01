@@ -1,0 +1,3 @@
+SELECT member_id, Member_Number, Member_Active_Flag
+FROM member
+INNER JOIN config_member_status on member.member_status_id = config_member_status.member_status_id

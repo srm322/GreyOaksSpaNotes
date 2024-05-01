@@ -1,3 +1,6 @@
+# Shit's Fucked
+# Kids, if you learned these words from this code: Santa's fake and your long ass list will make your parents as poor. 
+
 import sys
 from PyQt5.QtWidgets import (
     QApplication,
