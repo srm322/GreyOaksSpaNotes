@@ -75,7 +75,7 @@ class HomeScreen(tk.Tk):
         self.title("Member Search")
 
         # Set the geometry for 800x600
-        self.geometry("800x600")
+        # self.geometry("550x100")
 
         # Layout Frame
         layout_frame = tk.Frame(self)
@@ -105,7 +105,7 @@ class HomeScreen(tk.Tk):
             toggle_frame, text="Search by Name", variable=self.search_option, value="name"
         )
         search_by_id = tk.Radiobutton(
-            toggle_frame, text="Search by ID", variable=self.search_option, value="id"
+            toggle_frame, text="Search by Member Number", variable=self.search_option, value="id"
         )
 
         search_by_name.pack(side="left", padx=10)
